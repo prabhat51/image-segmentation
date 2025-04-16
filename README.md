@@ -1,78 +1,126 @@
-🧠 Image Segmentation Assignment
-This project implements an end-to-end pipeline for image segmentation using PyTorch. It covers dataset preparation, training a segmentation model, and visualizing results. The assignment was designed to evaluate my efficiency in data preprocessing, model training, and making informed design choices under resource constraints.
+# 🧠 Image Segmentation Assignment
 
-📌 Overview
-This repository contains two main components:
+This repository provides an end-to-end pipeline for semantic image segmentation using **PyTorch** and **PyTorch Lightning**. It includes data preprocessing from COCO annotations, model training using DeepLabV3+, and visual inference outputs. This project emphasizes reproducibility, robustness, and evaluation under computational constraints.
 
-Task 1 – Dataset preparation: Scripts to process a dataset (e.g., COCO or Cityscapes) into segmentation masks.
+---
 
-Task 2 – Model training: A PyTorch-based implementation of an image segmentation model (e.g., UNet or DeepLabV3), trained and evaluated with metrics.
+## 📌 Project Overview
 
-🧰 Setup Instructions (Linux)
-Clone the repository:
-bash
-Copy
-Edit
+- **Task 1 – Dataset Preparation**: `data_preprocessing.py` script processes COCO annotations and images to generate segmentation masks.
+- **Task 2 – Model Training**: `train.py` implements a configurable PyTorch Lightning trainer with DeepLabV3+ backbone from `segmentation_models_pytorch`.
+
+---
+
+## 🧰 Setup Instructions (Linux)
+
+1. Clone the repository:
+```bash
 git clone https://github.com/<your-username>/image-segmentation-assignment.git
 cd image-segmentation-assignment
-Install dependencies using uv:
-bash
-Copy
-Edit
+```
+
+2. Install dependencies using `uv`:
+```bash
 pip install uv
 uv pip install -r requirements.txt
-🧪 Task 1: Dataset Preparation
-Features:
-Accepts raw images and annotations (JSON/XML).
+```
 
-Generates binary/multi-class masks.
+---
 
-Handles overlapping regions and invalid annotations.
+## 🧪 Task 1: Dataset Preparation
 
-Works with 3,000–8,000 images.
+Run the preprocessing script:
 
-Edge Case Handling (Documented Here):
-Overlapping regions are resolved using instance priority.
+```bash
+python data_preprocessing.py \
+  --annotations path/to/annotations.json \
+  --images path/to/images \
+  --output ./dataset \
+  --max-images 5000
+```
 
-Missing annotations are ignored with warnings.
+### ✅ Features
+- Converts COCO JSON annotations into multi-class masks
+- Handles missing annotations, I/O errors, invalid masks
+- Stores output in `dataset/images/` and `dataset/masks/`
 
-Classes outside predefined labels are discarded.
+---
 
-Images without matching annotations are skipped.
+## 🧠 Task 2: Model Training
 
-Empty masks are removed from training set.
+Run the training script:
 
-Files with I/O errors are logged and skipped.
+```bash
+python train.py \
+  --data_path ./dataset \
+  --epochs 50 \
+  --lr 1e-4 \
+  --num_classes 80 \
+  --batch_size 16 \
+  --weight_decay 0.01 \
+  --img_size 512,512
+```
 
-Cropping/resizing ensures consistent shape.
+### ⚙️ Configuration Options
+- Image resolution, learning rate, number of classes
+- Supports training with mixed precision on GPU
+- Logs metrics with **Weights & Biases** or TensorBoard
 
-Invalid polygons are auto-corrected.
+---
 
-Unsupported image formats are filtered.
+## 📊 Evaluation & Inference
 
-Dataset integrity is checked before saving.
+Metrics used:
+- Intersection over Union (IoU)
+- Dice Coefficient
+- Pixel Accuracy
 
-🧠 Task 2: Model Training
-Model:
-Architecture: [e.g., UNet / DeepLabV3 / Vision Transformer]
+Model checkpoints are saved in `checkpoints/`. Inference scripts can reuse trained models for prediction and visualization.
 
-Trained using PyTorch.
+---
 
-Designed for generalization across unseen data.
+## 📂 Directory Structure
 
-Trained under 6 hours compute time.
+```
+image-segmentation-assignment/
+├── data_preprocessing.py      # Dataset creation from COCO
+├── train.py                   # PyTorch Lightning training
+├── trainning.ipynb            # Optional notebook interface
+├── dataset/                   # Generated masks and images
+│   ├── images/
+│   └── masks/
+├── checkpoints/               # Trained model weights
+├── results/                   # Output masks from inference
+├── requirements.txt
+└── README.md
+```
 
-Evaluation Metrics:
-IoU (Intersection over Union)
+---
 
-Dice Coefficient
+## ✅ Submission Guidelines
 
-Pixel Accuracy
+- GitHub repo with code, README, and sample visualizations
+- Example masks and predictions must be included
+- Report summarizing:
+  - Design choices
+  - Edge case handling
+  - Model architecture and improvements
+  - Training resources and time
+- Reproducibility from command line on Linux using `uv`
 
-Monitoring:
-Training progress is logged using WandB or TensorBoard.
+---
 
-📊 Results & Inference
-Visual samples of predicted masks are available in the results/ directory.
+## 🧠 Constraints & Expectations
 
-Inference script: inference.py (loads model weights and outputs masks).
+| Task        | Beginner Estimate | Expert Estimate |
+|-------------|-------------------|-----------------|
+| Task 1      | 1–2 days          | 2–3 hours       |
+| Task 2      | 2–3 days          | 1 day           |
+
+---
+
+> **Note:** Do not use Ultralytics (YOLOv8) for this assignment. Focus is on approach, reproducibility, and code clarity — not on final accuracy.
+
+---
+
+**Happy Segmenting! 🎯**
