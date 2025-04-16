@@ -1,0 +1,17 @@
+/home/yuvraj/miniconda3/envs/vjenv/lib/python3.9/site-packages/pytorch_lightning/loggers/wandb.py:397: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name      | Type                   | Params | Mode
+-------------------------------------------------------------
+0 | model     | DeepLabV3Plus          | 25.4 M | train
+1 | loss_fn   | CrossEntropyLoss       | 0      | train
+2 | train_iou | MulticlassJaccardIndex | 0      | train
+3 | val_iou   | MulticlassJaccardIndex | 0      | train
+-------------------------------------------------------------
+25.4 M    Trainable params
+0         Non-trainable params
+25.4 M    Total params
+101.658   Total estimated model params size (MB)
+386       Modules in train mode
+0         Modules in eval mode
+Epoch 0:   3%|▌                    | 16/625 [00:04<02:43,  3.72it/s, v_num=va2r]

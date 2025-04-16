@@ -1,0 +1,8 @@
+{"time":"2025-04-14T20:25:18.619128231+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/yuvraj/YuvrajML/vjproject/vj_project/wandb/offline-run-20250414_202518-hmqsswdf/logs/debug-core.log"}
+{"time":"2025-04-14T20:25:18.732268184+05:30","level":"WARN","msg":"GraphQL client is nil, skipping feature loading"}
+{"time":"2025-04-14T20:25:18.73269094+05:30","level":"INFO","msg":"created new stream","id":"hmqsswdf"}
+{"time":"2025-04-14T20:25:18.732728377+05:30","level":"INFO","msg":"stream: started","id":"hmqsswdf"}
+{"time":"2025-04-14T20:25:18.732824023+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"hmqsswdf"}
+{"time":"2025-04-14T20:25:18.732908736+05:30","level":"INFO","msg":"handler: started","stream_id":"hmqsswdf"}
+{"time":"2025-04-14T20:25:18.732966646+05:30","level":"INFO","msg":"sender: started","stream_id":"hmqsswdf"}
+{"time":"2025-04-14T20:25:18.739875619+05:30","level":"INFO","msg":"Starting system monitor"}

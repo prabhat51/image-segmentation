@@ -1,0 +1,60 @@
+{
+  "os": "Linux-5.15.0-134-generic-x86_64-with-glibc2.31",
+  "python": "CPython 3.9.7",
+  "startedAt": "2025-04-14T14:56:02.938125Z",
+  "args": [
+    "--data_path",
+    "/home/yuvraj/YuvrajML/vjproject/vj_project/data",
+    "--epochs",
+    "5",
+    "--lr",
+    "0.0001",
+    "--num_classes",
+    "256",
+    "--batch_size",
+    "8",
+    "--weight_decay",
+    "0.01",
+    "--img_size",
+    "512,512"
+  ],
+  "program": "/home/yuvraj/YuvrajML/vjproject/vj_project/train.py",
+  "codePath": "train.py",
+  "email": "jhariaprabhat19@gmail.com",
+  "root": "/home/yuvraj/YuvrajML/vjproject/vj_project",
+  "host": "csp",
+  "executable": "/home/yuvraj/miniconda3/envs/vjenv/bin/python",
+  "codePathLocal": "train.py",
+  "cpu_count": 14,
+  "cpu_count_logical": 28,
+  "gpu": "Quadro RTX 8000",
+  "gpu_count": 2,
+  "disk": {
+    "/": {
+      "total": "301237854208",
+      "used": "82111840256"
+    }
+  },
+  "memory": {
+    "total": "134728454144"
+  },
+  "cpu": {
+    "count": 14,
+    "countLogical": 28
+  },
+  "gpu_nvidia": [
+    {
+      "name": "Quadro RTX 8000",
+      "memoryTotal": "51539607552",
+      "cudaCores": 4608,
+      "architecture": "Turing"
+    },
+    {
+      "name": "Quadro RTX 8000",
+      "memoryTotal": "51539607552",
+      "cudaCores": 4608,
+      "architecture": "Turing"
+    }
+  ],
+  "cudaVersion": "12.8"
+}
