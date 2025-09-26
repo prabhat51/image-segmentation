@@ -15,7 +15,7 @@ This repository provides an end-to-end pipeline for semantic image segmentation 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/<your-username>/image-segmentation-assignment.git
+git clone https://github.com/prabhat51/image-segmentation-assignment.git
 cd image-segmentation-assignment
 ```
 
@@ -77,23 +77,6 @@ Metrics used:
 
 Model checkpoints are saved in `checkpoints/`. Inference scripts can reuse trained models for prediction and visualization.
 
----
-
-## 📂 Directory Structure
-
-```
-image-segmentation-assignment/
-├── data_preprocessing.py      # Dataset creation from COCO
-├── train.py                   # PyTorch Lightning training
-├── trainning.ipynb            # Optional notebook interface
-├── dataset/                   # Generated masks and images
-│   ├── images/
-│   └── masks/
-├── checkpoints/               # Trained model weights
-├── results/                   # Output masks from inference
-├── requirements.txt
-└── README.md
-```
 
 ---
 
@@ -108,19 +91,8 @@ image-segmentation-assignment/
   - Training resources and time
 - Reproducibility from command line on Linux using `uv`
 
----
-
-## 🧠 Constraints & Expectations
-
-| Task        | Beginner Estimate | Expert Estimate |
-|-------------|-------------------|-----------------|
-| Task 1      | 1–2 days          | 2–3 hours       |
-| Task 2      | 2–3 days          | 1 day           |
-
----
 
 > **Note:** Do not use Ultralytics (YOLOv8) for this assignment. Focus is on approach, reproducibility, and code clarity — not on final accuracy.
 
 ---
 
-**Happy Segmenting! 🎯**
